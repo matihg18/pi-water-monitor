@@ -48,4 +48,4 @@ proyecto-boya/
 ```
 
 ## Actualidad
-Actualmente el proyecto no se ha llevado a cabo a nivel físico con la conexión de los sensores a la Raspberry, pero es el siguiente paso para comprobar el funcionamiento del programa en un entorno real. A medida que se avances se irán subiendo en este repositorio.
+Actualmente el proyecto no se ha llevado a cabo a nivel físico con la conexión de los sensores a la Raspberry, pero es el siguiente paso para comprobar el funcionamiento del programa en un entorno real. A medida que se avance se irán subiendo en este repositorio.
