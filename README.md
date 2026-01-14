@@ -46,3 +46,6 @@ proyecto-boya/
         ├── sensor_ph.py    # Medición de potencial de Hidrógeno
         └── sensor_temp.py  # Medición de temperatur
 ```
+
+## Actualidad
+Actualmente el proyecto no se ha llevado a cabo a nivel físico con la conexión de los sensores a la Raspberry, pero es el siguiente paso para comprobar el funcionamiento del programa en un entorno real. A medida que se avances se irán subiendo en este repositorio.
