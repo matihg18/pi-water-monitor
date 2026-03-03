@@ -30,7 +30,9 @@ class Boya:
                 temp_data = self.temp_sensor.read()
                 registro_completo.update(temp_data)
 
-                do_data = self.do_sensor.read() 
+                # Se pasa la temperatura real al sensor de OD para compensación
+                temp_c_value = temp_data.get("temperatura_C")
+                do_data = self.do_sensor.read(temp_c_value=temp_c_value) 
                 registro_completo.update(do_data)
                 
                 ph_data = self.ph_sensor.read()
@@ -45,3 +47,9 @@ class Boya:
                 print(f"ERROR EN EL CICLO DE MEDICIÓN: {e}")
 
             time.sleep(interval_seg)
+
+    def close(self):
+        """Libera los recursos de hardware de la boya."""
+        print("\n--- Cerrando recursos de la Boya ---")
+        if hasattr(self.gps_sensor, 'close'):
+            self.gps_sensor.close()

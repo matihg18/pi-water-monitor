@@ -20,7 +20,7 @@ class SensorTemp(ISensor):
         try:
             temperatura_c = self.sensor.get_temperature()
             
-            return {"temperatura_ambiente_C": temperatura_c}
+            return {"temperatura_C": temperatura_c}
             
         except Exception as e:
             return {"error_temp_reading": str(e)}

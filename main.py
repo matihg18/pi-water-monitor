@@ -44,11 +44,13 @@ def main():
     
     except KeyboardInterrupt:
         print("\n\n--- Programa detenido manualmente. Adiós! ---")
-        sys.exit(0)
         
     except Exception as e:
         print(f"\n\n--- Error irrecuperable en el sistema Boya: {e} ---")
         sys.exit(1)
+    
+    finally:
+        boya_system.close()
 
 if __name__ == "__main__":
     # Esta línea asegura que el sistema sepa que 'boya' es el paquete raíz
