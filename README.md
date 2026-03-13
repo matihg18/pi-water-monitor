@@ -27,8 +27,31 @@ Además necesitará crearse el entorno virtual de Python para instalar las depen
     pip install -r requirements.txt
 ```
 
+## Ejecución
 
-## Estructura del Proyecto
+El sistema soporta dos modos de operación:
+
+### 1. Modo Real (Hardware)
+Para utilizar en la Raspberry Pi con los sensores conectados y configurados:
+```bash
+python3 main.py
+```
+
+### 2. Modo Simulación
+Permite probar la lógica del sistema y la generación de archivos CSV sin necesidad de hardware. Genera datos aleatorios coherentes:
+```bash
+python3 main.py --sim
+```
+*También puedes especificar un intervalo de medición personalizado (en segundos):*
+```bash
+python3 main.py --sim --interval 2
+```
+
+## Tests
+El proyecto incluye un conjunto de tests para verificar la arquitectura y lógica de los sensores (utilizando mocks). Para ejecutarlos:
+```bash
+pytest
+```
 ```text
 proyecto-boya/
 ├── main.py                 # Punto de entrada y bucle principal
@@ -44,7 +67,8 @@ proyecto-boya/
         ├── sensor_gps.py   # Gestión de coordenadas y datos NMEA
         ├── sensor_od.py    # Medición de Oxígeno Disuelto
         ├── sensor_ph.py    # Medición de potencial de Hidrógeno
-        └── sensor_temp.py  # Medición de temperatur
+        ├── sensor_temp.py  # Medición de temperatura
+        └── sensor_mock.py  # Sensores virtuales para el modo simulación
 ```
 
 ## Actualidad
